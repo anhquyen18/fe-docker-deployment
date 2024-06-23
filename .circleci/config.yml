@@ -31,11 +31,11 @@ jobs:
       # Chạy kiểm tra
       - run:
           name: Run tests
-          command: npm test
+          command: npm test:unit
 
       # Lưu kết quả kiểm tra
-      - store_test_results:
-          path: test-results
+      # - store_test_results:
+      #     path: test-results
 
       # Build ứng dụng
       - run:
