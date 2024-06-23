@@ -58,7 +58,7 @@ jobs:
       - run:
           name: Deploy over SSH
           command: |
-            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST 'cd /home/docker/site/vuejs-app&& echo $USER_SECRET | su - dockeruser && git fetch origin main && git pull origin main && git reset --hard origin/main && docker-compose up -d --build frontend'
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST 'cd /home/docker/site/vuejs-app && echo $USER_SECRET | su docker && git fetch origin main && git pull origin main && git reset --hard origin/main && docker-compose up -d --build frontend'
 
 workflows:
   version: 2
