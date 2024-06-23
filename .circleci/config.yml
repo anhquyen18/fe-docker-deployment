@@ -8,7 +8,12 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      - checkout
+      - checkout:
+          path: ~/repo
+      
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:YsSrkByn+VBxbIvGfN28IhrHnLXPIM67qqdRTq4kszI"
 
       # Khôi phục bộ nhớ đệm của các dependencies
       - restore_cache:
@@ -45,9 +50,24 @@ jobs:
       # Lưu các sản phẩm build
       - store_artifacts:
           path: dist
+  
+  deploy:
+    machine: 
+      enabled: true
+    steps:
+      - run:
+          name: Deploy over SSH
+          command: /
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST 'cd /home/docker/site && git fetch origin main && git reset --hard origin/main && docker-compose up -d --build frontend'
 
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
+            filters:
+              branches:
+                only: main
