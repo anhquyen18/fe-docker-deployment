@@ -13,7 +13,7 @@ jobs:
       
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:YsSrkByn+VBxbIvGfN28IhrHnLXPIM67qqdRTq4kszI"
+            - "SHA256:m9srz3elz7BkktLsfc+tcc3zQ3L5O4nPUuWJ3B87xOc"
 
       # Khôi phục bộ nhớ đệm của các dependencies
       - restore_cache:
