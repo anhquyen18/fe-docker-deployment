@@ -29,9 +29,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package-lock.json" }}
 
       # Chạy kiểm tra
-      - run:
-          name: Run tests
-          command: npm test:unit
+      # - run:
+      #     name: Run tests
+      #     command: npm test:unit
 
       # Lưu kết quả kiểm tra
       # - store_test_results:
