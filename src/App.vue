@@ -8,7 +8,7 @@ import HelloWorld from './components/HelloWorld.vue';
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="Anh Quyền siêu cấp đẹp trai, không thứ nào trên vũ trụ sánh bằng!" />
+      <HelloWorld msg="Anh Quyền siêu cấp đẹp trai, test deployyyyyyyyyyyyy!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
